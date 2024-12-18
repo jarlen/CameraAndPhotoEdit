@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 显示预览图形 -->
+
+    <cn.jarlen.photoedit.view.BaseCameraContainer
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 相机界面顶部bar -->
+
+    <RelativeLayout
+        android:id="@+id/camera_header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="#DB383C50" >
+
+        <ImageView
+            android:id="@+id/camera_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:layout_marginLeft="13dp"
+            android:src="@drawable/common_back_btn" />
+
+        <ImageView
+            android:id="@+id/camera_flash_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:layout_marginRight="19dp"
+            android:src="@drawable/camera_flash_off_btn" />
+    </RelativeLayout>
+
+    <!-- 相机界面底部bar -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:layout_alignParentBottom="true"
+        android:background="#E024273B" >
+
+        <ImageView
+            android:id="@+id/camera_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="31dp"
+            android:src="@drawable/camera_switch" />
+
+        <ImageView
+            android:id="@+id/camera_capture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="false"
+            android:background="@drawable/camera_btn_bg" />
+
+        <cn.jarlen.photoedit.view.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/camera_album"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="31dp"
+            android:src="@drawable/camera_photo_img"
+            app:border_color="#00000000"
+            app:border_width="0dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

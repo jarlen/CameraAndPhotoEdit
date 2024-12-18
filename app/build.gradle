@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "cn.jarlen.photoedit"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.2"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'org.apache.httpcomponents:httpcore:4.4.4'
+    implementation 'com.alibaba:fastjson:1.2.47'
+    implementation 'pub.devrel:easypermissions:3.0.0'
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+}

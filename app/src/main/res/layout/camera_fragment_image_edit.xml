@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#414358" >
+
+    <!-- 界面头部 -->
+
+    <RelativeLayout
+        android:id="@+id/imageEditHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/imageEditHeader_height"
+        android:layout_alignParentTop="true"
+        android:background="#383C50" >
+
+        <ImageView
+            android:id="@+id/image_edit_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/image_edit_back_layout_marginLeft"
+            android:src="@drawable/common_back_btn" />
+
+        <TextView
+            android:id="@+id/image_edit_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/image_edit_title_layout_marginLeft"
+            android:layout_toRightOf="@+id/image_edit_back"
+            android:text="编辑"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/image_edit_title_textsize" />
+
+        <Button
+            android:id="@+id/image_edit_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/image_edit_next_layout_marginRight"
+            android:background="@null"
+            android:clickable="false"
+            android:text="下一步"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/image_edit_next_textsize" />
+    </RelativeLayout>
+
+    <cn.jarlen.photoedit.view.WMFilterOperateView
+        android:id="@+id/wm_filter_operateview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/image_edit_menu_ll"
+        android:layout_below="@+id/imageEditHeader"
+        android:layout_marginLeft="@dimen/image_edit_content_marginLeftRight"
+        android:layout_marginRight="@dimen/image_edit_content_marginLeftRight"
+        android:background="#414358" />
+
+    <RelativeLayout
+        android:id="@+id/shop_and_label_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/shop_and_label_ll_layout_height"
+        android:layout_alignBottom="@+id/wm_filter_operateview"
+        android:background="#CC383C50"
+        android:visibility="gone" >
+
+        <!-- 商店按钮 -->
+
+        <RelativeLayout
+            android:id="@+id/shopping_Rl"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/image_edit_content_marginLeftRight"
+            android:background="#CC383C50" >
+
+            <ImageView
+                android:id="@+id/shopping_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="#CC383C50"
+                android:src="@drawable/camera_shopping_btn" />
+        </RelativeLayout>
+
+        <!-- 标签tab栏 -->
+
+        <cn.jarlen.photoedit.view.TabHorizontalScrollView
+            android:id="@+id/tabScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/image_edit_content_marginLeftRight"
+            android:layout_marginRight="@dimen/image_edit_content_marginLeftRight"
+            android:layout_toRightOf="@+id/shopping_Rl"
+            android:background="#CC383C50" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/tabScrollView"
+            android:layout_marginRight="@dimen/image_edit_content_marginLeftRight"
+            android:background="@drawable/camera_tab_gradient" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/image_edit_menu_ll"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:layout_above="@+id/image_edit_bottom_menu_rl"
+        android:background="#383C50"
+        android:gravity="center_vertical" >
+
+        <!-- 滤镜／水印item容器 -->
+
+        <cn.jarlen.photoedit.view.HorizontalListView
+            android:id="@+id/chooseContent"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:background="#383C50"
+            android:paddingLeft="@dimen/image_edit_content_marginLeftRight"
+            android:paddingRight="@dimen/image_edit_content_marginLeftRight" />
+
+        <RelativeLayout
+            android:id="@+id/adjustBar_rl"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:background="#2A2D3E"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/adjustBar_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="#BA89EB"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/adjustBar_reset_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/adjustBar_tv"
+                android:layout_marginRight="20dp"
+                android:padding="5dp"
+                android:text="复位"
+                android:textColor="#BA89EB"
+                android:textSize="15sp" />
+
+            <cn.jarlen.photoedit.view.JarlenView
+                android:id="@+id/adjustBar"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                android:background="#2A2D3E" />
+        </RelativeLayout>
+
+        <!-- 微调菜单 -->
+
+        <LinearLayout
+            android:id="@+id/chooseContent_adjust"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:background="#383C50"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/image_edit_content_marginLeftRight"
+            android:paddingRight="@dimen/image_edit_content_marginLeftRight"
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:id="@+id/adjust_brightness"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="#2C3241" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawablePadding="8dp"
+                    android:drawableTop="@drawable/camera_adjust_brightness_btn"
+                    android:gravity="center"
+                    android:text="亮度"
+                    android:textColor="#66688A"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/adjust_color"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="#2C3241" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawablePadding="8dp"
+                    android:drawableTop="@drawable/camera_adjust_colortemperature_btn"
+                    android:gravity="center"
+                    android:text="色温"
+                    android:textColor="#66688A"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/adjust_tonecurve"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="#2C3241" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawablePadding="8dp"
+                    android:drawableTop="@drawable/camera_adjust_tonecurve_btn"
+                    android:gravity="center"
+                    android:text="暗角"
+                    android:textColor="#66688A"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- 界面底部 -->
+
+    <RelativeLayout
+        android:id="@+id/image_edit_bottom_menu_rl"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FF303443" >
+
+        <LinearLayout
+            android:id="@+id/image_edit_bottom_menu_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/image_edit_bottom_menu_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="滤镜"
+                android:textColor="#FFBA89EB"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/camera_image_edit_bottom_menu_point" />
+
+            <TextView
+                android:id="@+id/image_edit_bottom_menu_watermark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="水印"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/camera_image_edit_bottom_menu_point" />
+
+            <TextView
+                android:id="@+id/image_edit_bottom_menu_adjust"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="微调"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- 微调界面底部布局 -->
+
+        <LinearLayout
+            android:id="@+id/adjust_bottom_menu_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/adjust_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/camera_cancel_btn" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/adjust_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/camera_done_btn" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

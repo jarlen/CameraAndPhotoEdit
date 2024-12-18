@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:camera="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <cn.jarlen.photoedit.view.BaseCameraView
+        android:id="@+id/cameraView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <cn.jarlen.photoedit.view.BaseFocusImageView
+        android:id="@+id/focusImageView"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        camera:focus_focusing_id="@drawable/camera_focus"
+        camera:focus_success_id="@drawable/camera_focus"
+        camera:focus_fail_id="@drawable/camera_focus" />
+
+</RelativeLayout>

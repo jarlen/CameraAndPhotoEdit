@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="filterType">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </integer-array>
+
+    <string-array name="filterName">
+        <item>原图</item>
+        <item>Libra</item>
+        <item>Aquarius</item>
+        <item>Gemini</item>
+        <item>Pisces</item>
+        <item>Cancer</item>
+        <item>Scorpio</item>
+        <item>Virgo</item>
+        <item>Taurus</item>
+        <item>Capricorn</item>
+        <item>Leo</item>
+        <item>Aries</item>
+        <item>Sagittarius</item>
+    </string-array>
+    <string-array name="localWMFolder">
+        <item>WaterMarks/wm10_youtaidu/youtaidu.json</item>
+        <item>WaterMarks/wm13_food/food.json</item>
+        <item>WaterMarks/wm17_mengxiang/mengxiang.json</item>
+        <item>WaterMarks/wm18_xiatian/xiatian.json</item>
+        <item>WaterMarks/wm20_qixi/qixi.json</item>
+    </string-array>
+    <string-array name="displaySize">
+        <item>720x1280-1840x3264</item>
+        <item>1080x1920-2368x4208</item>
+        <item>480x854-1440x2560</item>
+    </string-array>
+
+</resources>
